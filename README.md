@@ -89,9 +89,6 @@ plt.show()
 - **Machine Learning Models**: Random Forest, Logistic Regression, etc.
 - **Visualization Tools**: Matplotlib, Seaborn
 
-## Contributors
-- [Your Name]
-
 ## License
 This project is licensed under the MIT License.
 
