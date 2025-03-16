@@ -45,6 +45,16 @@ The dataset contains customer-related attributes such as:
 - Contract type plays a significant role; long-term contracts reduce churn.
 - Businesses can reduce churn by offering **loyalty programs** and **personalized discounts**.
 
+## Visualizations
+### Churn Distribution
+![Churn Distribution](images/churn_distribution.png)
+
+### Monthly Charges vs Churn
+![Monthly Charges](images/monthly_charges_vs_churn.png)
+
+### Feature Importance (Random Forest)
+![Feature Importance](images/feature_importance.png)
+
 ## Technologies Used
 - **Programming Language**: Python
 - **Libraries**: pandas, numpy, scikit-learn, matplotlib, seaborn
