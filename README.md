@@ -47,13 +47,41 @@ The dataset contains customer-related attributes such as:
 
 ## Visualizations
 ### Churn Distribution
-![Churn Distribution](images/churn_distribution.png)
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+data = pd.read_csv('data/customer_churn.csv')
+plt.figure(figsize=(6,4))
+sns.countplot(x='Churn', data=data, palette='coolwarm')
+plt.title('Churn Distribution')
+plt.show()
+```
 
 ### Monthly Charges vs Churn
-![Monthly Charges](images/monthly_charges_vs_churn.png)
+```python
+plt.figure(figsize=(8,5))
+sns.boxplot(x='Churn', y='MonthlyCharges', data=data, palette='coolwarm')
+plt.title('Monthly Charges vs Churn')
+plt.show()
+```
 
 ### Feature Importance (Random Forest)
-![Feature Importance](images/feature_importance.png)
+```python
+from sklearn.ensemble import RandomForestClassifier
+
+X = data.drop(columns=['Churn'])
+y = data['Churn']
+model = RandomForestClassifier()
+model.fit(X, y)
+
+feature_importances = pd.Series(model.feature_importances_, index=X.columns).sort_values(ascending=False)
+plt.figure(figsize=(8,5))
+feature_importances.plot(kind='bar', color='skyblue')
+plt.title('Feature Importance (Random Forest)')
+plt.show()
+```
 
 ## Technologies Used
 - **Programming Language**: Python
